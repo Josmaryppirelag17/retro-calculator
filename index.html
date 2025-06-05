@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Retro Calc</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container mt-5">
+      <h1 class="site-title text-center mb-4">
+        <span class="title-text">Retro Calc</span>
+        <span class="title-decoration">★</span>
+        <span class="title-version">v1.0</span>
+      </h1>
+
+      <div class="calculator-container">
+        <div class="calculator-body">
+          <div class="display-container mb-3">
+            <div id="lastOperation" class="last-operation"></div>
+            <input
+              type="text"
+              class="form-control display"
+              id="display"
+              readonly
+            />
+          </div>
+          <div class="buttons-grid">
+            <button class="btn btn-special" onclick="clearDisplay()">C</button>
+            <button class="btn btn-special" onclick="deleteLastChar()">
+              ←
+            </button>
+            <button class="btn btn-special" onclick="addToDisplay('%')">
+              %
+            </button>
+            <button class="btn btn-operator" onclick="addToDisplay('/')">
+              /
+            </button>
+
+            <button class="btn btn-number" onclick="addToDisplay('7')">
+              7
+            </button>
+            <button class="btn btn-number" onclick="addToDisplay('8')">
+              8
+            </button>
+            <button class="btn btn-number" onclick="addToDisplay('9')">
+              9
+            </button>
+            <button class="btn btn-operator" onclick="addToDisplay('*')">
+              ×
+            </button>
+
+            <button class="btn btn-number" onclick="addToDisplay('4')">
+              4
+            </button>
+            <button class="btn btn-number" onclick="addToDisplay('5')">
+              5
+            </button>
+            <button class="btn btn-number" onclick="addToDisplay('6')">
+              6
+            </button>
+            <button class="btn btn-operator" onclick="addToDisplay('-')">
+              -
+            </button>
+
+            <button class="btn btn-number" onclick="addToDisplay('1')">
+              1
+            </button>
+            <button class="btn btn-number" onclick="addToDisplay('2')">
+              2
+            </button>
+            <button class="btn btn-number" onclick="addToDisplay('3')">
+              3
+            </button>
+            <button class="btn btn-operator" onclick="addToDisplay('+')">
+              +
+            </button>
+
+            <button class="btn btn-number" onclick="addToDisplay('0')">
+              0
+            </button>
+            <button class="btn btn-number" onclick="addToDisplay('.')">
+              .
+            </button>
+            <button
+              class="btn btn-equals"
+              onclick="calculate()"
+              style="grid-column: span 2"
+            >
+              =
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>Josmary Pirela | Desarrolladora Web</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

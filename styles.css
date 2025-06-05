@@ -1,0 +1,221 @@
+:root {
+  --primary-color: #ff6b6b;
+  --secondary-color: #9b59b6;
+  --accent-color: #ff8c00;
+  --background-color: #2c1f3e;
+  --display-color: #1a1225;
+  --text-color: #ffffff;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes glow {
+
+  0%,
+  100% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7),
+      0 0 20px rgba(255, 255, 255, 0.5),
+      0 0 30px var(--accent-color);
+  }
+
+  50% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.9),
+      0 0 30px rgba(255, 255, 255, 0.7),
+      0 0 40px var(--primary-color);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(-45deg, #2c1f3e, #ff6b6b, #9b59b6, #ff8c00);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  font-family: 'Pixelify Sans', system-ui, -apple-system, sans-serif;
+  position: relative;
+  padding-bottom: 80px;
+  /* Espacio para el footer */
+}
+
+.site-title {
+  color: var(--text-color);
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  animation: glow 3s ease-in-out infinite;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.title-text {
+  background: linear-gradient(45deg, #ffffff, #f0f0f0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  padding: 0 10px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.title-decoration {
+  color: var(--text-color);
+  font-size: 2rem;
+  margin: 0 10px;
+  display: inline-block;
+  animation: spin 4s linear infinite;
+  text-shadow: 0 0 10px var(--accent-color);
+}
+
+.title-version {
+  font-size: 1rem;
+  color: var(--text-color);
+  vertical-align: super;
+  margin-left: 5px;
+  text-shadow: 0 0 5px var(--accent-color);
+  opacity: 0.9;
+}
+
+main {
+  padding-bottom: 2rem;
+}
+
+.calculator-container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.calculator-body {
+  background: rgba(255, 107, 107, 0.9);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 107, 107, 0.3),
+    inset 0 0 15px rgba(0, 0, 0, 0.2);
+  border: 4px solid var(--secondary-color);
+  backdrop-filter: blur(5px);
+}
+
+.display-container {
+  background: var(--display-color);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 3px solid var(--secondary-color);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.last-operation {
+  color: var(--accent-color);
+  font-size: 0.8rem;
+  min-height: 20px;
+  margin-bottom: 5px;
+  text-align: right;
+  opacity: 0.7;
+  font-family: 'Pixelify Sans', monospace;
+}
+
+.display {
+  background-color: var(--display-color) !important;
+  color: var(--text-color) !important;
+  font-size: 1.5rem !important;
+  text-align: right;
+  border: none !important;
+  padding: 10px;
+  margin: 0;
+  font-family: 'Pixelify Sans', monospace;
+  letter-spacing: 2px;
+}
+
+.buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.btn {
+  padding: 15px;
+  font-size: 1.2rem;
+  border: 3px solid var(--secondary-color);
+  border-radius: 8px;
+  transition: all 0.2s;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  font-family: 'Pixelify Sans', sans-serif;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn-number {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+.btn-operator {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+}
+
+.btn-special {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+.btn-equals {
+  background-color: #50c878;
+  color: var(--text-color);
+}
+
+/* Efectos hover */
+.btn:hover {
+  filter: brightness(1.2);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  color: var(--text-color);
+  text-align: center;
+  font-family: 'Pixelify Sans', sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  z-index: 1000;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
