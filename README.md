@@ -2,8 +2,6 @@
 
 Una calculadora web con diseño retro inspirado en videojuegos, que combina funcionalidad moderna con una estética nostálgica.
 
-![Retro Calc Preview](preview.png)
-
 ## 📋 Características
 
 - **Diseño Retro Gaming**
